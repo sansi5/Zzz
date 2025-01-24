@@ -240,7 +240,7 @@ def handle_contact_admin(message):
     bot.reply_to(message, f"📞 @The_Sensi: {ADMIN_ID}")
 
 def handle_generate_key(message):
-    if message.from_user.id == ADMIN_ID: 1708821501
+    if message.from_user.id == ADMIN_ID:
         bot.send_message(message.chat.id, "Enter the duration for the key in the format: <days> <hours> <minutes> <seconds>")
         bot.register_next_step_handler(message, process_generate_key)
     else:
@@ -316,7 +316,7 @@ def handle_my_account(message):
         bot.reply_to(message, "❓ No account information found.")
 
 def handle_admin_panel(message):
-    if message.from_user.id == ADMIN_ID: 1708821501
+    if message.from_user.id == ADMIN_ID:
         bot.send_message(message.chat.id, "⚙️ Fetching data... Please wait.")
         time.sleep(1)
 
@@ -415,7 +415,7 @@ def process_delete_all(message):
 
 @bot.message_handler(func=lambda message: message.text == "🗑️ Delete All")
 def handle_delete_all(message):
-    if message.from_user.id == ADMIN_ID: 1708821501
+    if message.from_user.id == ADMIN_ID:
         handle_delete_all_prompt(message)
     else:
         bot.reply_to(message, "🚫 You do not have permission to perform this action.")
